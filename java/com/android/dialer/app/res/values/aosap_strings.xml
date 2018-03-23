@@ -20,4 +20,9 @@
     <string name="wb_amr_format" translatable="false">AMR-WB</string>
     <string name="aac_format" translatable="false">AAC</string>
 
+    <!-- Full Screen Caller Photo -->
+    <string name="fullscreen_caller_photo_title">Fullscreen photo</string>
+    <string name="fullscreen_caller_photo_summary">Display full-screen photo in incoming and outgoing calls</string>
+    <string name="fullscreen_caller_photo_message">To use, you must restart the application</string>
+
 </resources>
