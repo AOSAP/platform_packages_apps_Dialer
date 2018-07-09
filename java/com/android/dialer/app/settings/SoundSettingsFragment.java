@@ -16,6 +16,7 @@
 
 package com.android.dialer.app.settings;
 
+import android.app.NotificationManager;
 import android.content.Context;
 import android.media.RingtoneManager;
 import android.os.Build;
@@ -33,6 +34,7 @@ import android.telephony.CarrierConfigManager;
 import android.telephony.TelephonyManager;
 import android.widget.Toast;
 import com.android.dialer.app.R;
+import com.android.dialer.callrecord.impl.CallRecorderService;
 import com.android.dialer.util.SettingsUtil;
 
 public class SoundSettingsFragment extends PreferenceFragment
@@ -70,6 +72,8 @@ public class SoundSettingsFragment extends PreferenceFragment
   private SwitchPreference vibrateWhenRinging;
   private SwitchPreference playDtmfTone;
   private ListPreference dtmfToneLength;
+
+  private NotificationManager notificationManager;
 
   @Override
   public Context getContext() {
@@ -117,6 +121,11 @@ public class SoundSettingsFragment extends PreferenceFragment
       getPreferenceScreen().removePreference(dtmfToneLength);
       dtmfToneLength = null;
     }
+    if (!CallRecorderService.isEnabled(getActivity())) {
+      getPreferenceScreen().removePreference(
+          findPreference(context.getString(R.string.call_recording_category_key)));
+    }
+    notificationManager = context.getSystemService(NotificationManager.class);
   }
 
   @Override
