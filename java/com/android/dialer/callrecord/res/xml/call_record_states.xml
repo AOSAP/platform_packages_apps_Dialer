@@ -1034,7 +1034,14 @@
            https://www.alfatronik.com.pl/info/nagrywanie-rozmow-legalne/
            https://bezprawnik.pl/legalnosc-nagrywania-rozmowy/
     -->
+
     <country iso="pl" allowed="true" />
+
+    <!--Enable recording for Pakistan:
+         No clear definition exists on the matter of call recordings being made by one side.
+    -->
+
+    <country iso="pk" allowed="true" />
 
     <!-- Disable recording for Puerto Rico:
          Title Thirty-three of the Penal Code of 2004, Subtitle 5, Special Provisions, Part I:
